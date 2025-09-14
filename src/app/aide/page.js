@@ -1,26 +1,33 @@
 "use client";
 
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Aide() {
+  const [heureActuelle, setHeureActuelle] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeureActuelle(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
   const exemples = [
     {
-      titre: "Recherche d&apos;une personne recherchée",
+      titre: "Recherche de personnes recherchées",
       scenarios: [
         {
           description:
             "Un véhicule est contrôlé, vérifiez si le conducteur est recherché",
           nom: "MARTIN",
-          action:
-            "Rechercher &apos;MARTIN&apos; dans l&apos;onglet Personnes Recherchées",
+          action: "Rechercher « MARTIN » dans l'onglet Personnes Recherchées",
           resultatAttendu:
             "Personne dangereuse recherchée pour vol avec violence",
         },
         {
-          description: "Contrôle d&apos;identité sur une femme suspecte",
+          description: "Contrôle d'identité sur une femme suspecte",
           nom: "MOREAU Sophie",
-          action:
-            "Rechercher &apos;Sophie MOREAU&apos; dans l&apos;onglet Personnes",
+          action: "Rechercher « Sophie MOREAU » dans l'onglet Personnes",
           resultatAttendu: "Recherchée pour homicide - Très dangereuse",
         },
       ],
@@ -30,10 +37,9 @@ export default function Aide() {
       scenarios: [
         {
           description:
-            "Contrôle routier - vérifier une plaque d&apos;immatriculation",
+            "Contrôle routier - vérifier une plaque d'immatriculation",
           plaque: "AB-123-CD",
-          action:
-            "Rechercher &apos;AB-123-CD&apos; dans l&apos;onglet Véhicules Volés",
+          action: "Rechercher « AB-123-CD » dans l'onglet Véhicules Volés",
           resultatAttendu: "BMW X3 volée, utilisée dans des braquages",
         },
         {
@@ -48,17 +54,15 @@ export default function Aide() {
       titre: "Contrôle des permis de conduire",
       scenarios: [
         {
-          description:
-            "Contrôle routier - vérifier la validité d&apos;un permis",
+          description: "Contrôle routier - vérifier la validité d'un permis",
           numero: "074AB123456",
-          action: "Rechercher le numéro dans l&apos;onglet Permis de Conduire",
-          resultatAttendu:
-            "Permis suspendu pour conduite en état d&apos;ivresse",
+          action: "Rechercher le numéro dans l'onglet Permis de Conduire",
+          resultatAttendu: "Permis suspendu pour conduite en état d'ivresse",
         },
         {
           description: "Accident - vérifier les points du conducteur",
           nom: "MOREAU Sophie",
-          action: "Rechercher &apos;MOREAU&apos; dans les permis",
+          action: "Rechercher « MOREAU » dans les permis",
           resultatAttendu: "8 points restants, plusieurs infractions récentes",
         },
       ],
@@ -69,18 +73,18 @@ export default function Aide() {
     {
       titre: "Sécurité lors des contrôles",
       conseils: [
-        "Toujours vérifier le niveau de dangerosité avant d&apos;approcher",
+        "Toujours vérifier le niveau de dangerosité avant d'approcher",
         "En cas de personne très dangereuse, demander du renfort",
-        "Noter l&apos;heure et le lieu du contrôle",
+        "Noter l'heure et le lieu du contrôle",
         "Prendre des photos si nécessaire",
       ],
     },
     {
       titre: "Procédures de recherche",
       conseils: [
-        "Commencer par une recherche générale si vous n&apos;êtes pas sûr",
+        "Commencer par une recherche générale si vous n'êtes pas sûr",
         "Utiliser les critères spécifiques pour affiner",
-        "Vérifier l&apos;orthographe des noms",
+        "Vérifier l'orthographe des noms",
         "Essayer les variantes (nom de jeune fille, pseudonymes)",
       ],
     },
@@ -147,7 +151,7 @@ export default function Aide() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
         {/* Introduction */}
         <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8 rounded-r-lg">
           <h2 className="text-xl font-semibold text-blue-800 mb-3">
