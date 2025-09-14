@@ -55,7 +55,7 @@ export default function Home() {
     ],
     vehicules: [
       { value: '', label: 'Recherche générale' },
-      { value: 'plaque', label: 'Plaque d\'immatriculation' },
+      { value: 'plaque', label: 'Plaque d&apos;immatriculation' },
       { value: 'marque', label: 'Marque' },
       { value: 'modele', label: 'Modèle' },
       { value: 'proprietaire', label: 'Propriétaire' }
@@ -92,7 +92,7 @@ export default function Home() {
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
-              Guide d'aide
+              Guide d&apos;aide
             </Link>
           </div>
         </div>
@@ -245,7 +245,7 @@ export default function Home() {
                         <div className="space-y-2 text-sm">
                           <p><span className="font-medium">Description:</span> {resultat.description}</p>
                           <p><span className="font-medium">Dernière localisation:</span> {resultat.derniereLieu}</p>
-                          <p><span className="font-medium">Date d'émission:</span> {resultat.dateEmission}</p>
+                          <p><span className="font-medium">Date d&apos;émission:</span> {resultat.dateEmission}</p>
                         </div>
                       </div>
                     </div>
@@ -345,7 +345,7 @@ export default function Home() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0120 12a8 8 0 10-16 0 7.962 7.962 0 006 7.291z" />
             </svg>
             <h3 className="text-lg font-medium text-gray-900 mb-2">Aucun résultat trouvé</h3>
-            <p className="text-gray-500">Essayez avec d'autres critères de recherche.</p>
+            <p className="text-gray-500">Essayez avec d&apos;autres critères de recherche.</p>
           </div>
         )}
       </main>
@@ -357,7 +357,7 @@ export default function Home() {
             🎓 Application de formation - École de Police | Toutes les données sont fictives
           </p>
           <p className="text-xs text-gray-400 mt-2">
-            Développé pour l'apprentissage des systèmes de fichiers policiers
+            Développé pour l&apos;apprentissage des systèmes de fichiers policiers
           </p>
         </div>
       </footer>
